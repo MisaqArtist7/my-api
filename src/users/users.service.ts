@@ -67,13 +67,11 @@ export class UsersService {
         return this.users.find((user) => user.id === id);
     }
 
+    deleteUser(id : number){
+        return this.users = this.users.filter((user) => user.id !== id);
+    } 
 }
 
-// {
-//   "id": 2,
-//   "username": "alireza",
-//   "age": 23,
-//   "stack": "back-end"
-// }
+
 
 
