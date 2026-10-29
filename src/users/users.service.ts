@@ -4,9 +4,9 @@ import { CreateUserDto } from './dto/create-user.dto/create-user.dto.js';
 @Injectable()
 export class UsersService {
     private users = [
-        {id:1, username: 'misaq', age:23, stack: 'Front-end'},
-        {id:2, username: 'alireza', age:23, stack: 'back-end'},
-        {id:3, username: 'farshad', age:23, stack: 'DevOps'},
+        {id:1, username: 'misaq'},
+        {id:2, username: 'alireza'},
+        {id:3, username: 'farshad'},
     ]
     getAllUsers(): object {
         return {
