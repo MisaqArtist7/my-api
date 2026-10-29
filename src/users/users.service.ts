@@ -34,7 +34,7 @@ export class UsersService {
 
         const newUser = {
             ...user,
-            id: this.users.length + 1
+            id: this.users.length + 1 
         }
 
         this.users = [...this.users, newUser]
