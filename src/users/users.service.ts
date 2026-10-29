@@ -1,4 +1,5 @@
 import { Injectable, NotFoundException, BadRequestException, Body } from '@nestjs/common';
+import { CreateUserDto } from './dto/create-user.dto/create-user.dto.js';
 
 @Injectable()
 export class UsersService {
@@ -24,7 +25,7 @@ export class UsersService {
         return user
     }
 
-    createUser(body : any){
+    createUser(body : CreateUserDto) : object{
         const user = body
 
         if (!user || Object.keys(user).length === 0) {
