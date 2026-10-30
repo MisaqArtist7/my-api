@@ -1,6 +1,7 @@
 import { Body, Controller, Delete, Get, Param, Patch, Post, Put, ValidationPipe } from '@nestjs/common';
 import { CreateUserDto } from './dto/create-user.dto/create-user.dto.js';
 import { UsersService } from './users.service.js';
+import { CustomPipe } from '../pipes/custom/custom.pipe.js';
 
 @Controller('users')
 export class UsersController {
@@ -17,7 +18,7 @@ export class UsersController {
     }
 
     @Post()
-    createUser(@Body() body : CreateUserDto){
+    createUser(@Body(new CustomPipe()) body : CreateUserDto){
         return this.usersService.createUser(body)
     }
 
