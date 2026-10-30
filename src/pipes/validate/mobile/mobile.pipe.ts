@@ -6,13 +6,13 @@ export class MobilePipe implements PipeTransform {
     console.log(value);
     const mobile = value?.mobile;
     if (!mobile) {
-      throw new badRequestException('Mobile number is required');
+      throw new BadRequestException('Mobile number is required');
     }
     if (typeof mobile !== 'string') {
-      throw new badRequestException('Mobile number must be a string');
+      throw new BadRequestException('Mobile number must be a string');
     }
     if (!/^\d{11}$/.test(mobile)) {
-      throw new badRequestException('Mobile number must be a 11-digit number');
+      throw new BadRequestException('Mobile number must be a 11-digit number');
     }
     return value;
   }
