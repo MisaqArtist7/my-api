@@ -17,15 +17,18 @@ export class UsersController {
         return this.usersService.getUserById(Number(id));
     }
 
+// ----------------------------------------------
     @Post()
     createUser(@Body(new CustomPipe()) body : CreateUserDto){
         return this.usersService.createUser(body)
     }
+// ----------------------------------------------
 
-    @Patch('/:id')
-    updateUser(@Param('id') id : string) {
-        return this.usersService.updateUser(Number(id));
-    }
+
+    // @Patch('/:id')
+    // updateUser(@Param('id') id : string) {
+    //     return this.usersService.updateUser(Number(id));
+    // }
 
     @Put('/:id')
     changeUser(@Param('id') id : string, @Body() body : object){

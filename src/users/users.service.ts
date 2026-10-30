@@ -4,9 +4,9 @@ import { CreateUserDto } from './dto/create-user.dto/create-user.dto.js';
 @Injectable()
 export class UsersService {
     private users = [
-        {id:1, username: 'misaq', age:23, stack: 'Front-end'},
-        {id:2, username: 'alireza', age:23, stack: 'back-end'},
-        {id:3, username: 'farshad', age:23, stack: 'DevOps'},
+        {id:1, username: 'misaq',mobile: '09123456789'},
+        {id:2, username: 'alireza',mobile: '09123456789'},
+        {id:3, username: 'farshad', mobile: '09123456789'},
     ]
     getAllUsers(): object {
         return {
@@ -25,7 +25,7 @@ export class UsersService {
         return user
     }
 
-    createUser(body : CreateUserDto) : object{
+        createUser(body : CreateUserDto) : object{
         const user = body
 
         if (!user || Object.keys(user).length === 0) {
@@ -41,16 +41,16 @@ export class UsersService {
         return this.users
     }
 
-    updateUser(id : number){
-        const user = this.users.find((user) => user.id === id);
+    // updateUser(id : number){
+    //     const user = this.users.find((user) => user.id === id);
 
-        if(!user) {
-            throw new NotFoundException('User not found');
-        }
+    //     if(!user) {
+    //         throw new NotFoundException('User not found');
+    //     }
         
-        user.age = 72;
-        return user
-    }
+    //     user.age = 72;
+    //     return user
+    // }
 
     changeUser(id: number, body: object) {
         const user = this.users.find((user) => user.id === id);
