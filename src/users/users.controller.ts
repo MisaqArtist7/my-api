@@ -17,11 +17,7 @@ export class UsersController {
     }
 
     @Post()
-    createUser(@Body(new ValidationPipe({
-        whitelist: true,
-        forbidNonWhitelisted: true,
-        transform: true,
-    })) body : CreateUserDto){
+    createUser(@Body() body : CreateUserDto){
         return this.usersService.createUser(body)
     }
 
