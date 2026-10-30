@@ -11,8 +11,8 @@ export class MobilePipe implements PipeTransform {
     if (typeof mobile !== 'string') {
       throw new BadRequestException('Mobile number must be a string');
     }
-    if (!/^\d{11}$/.test(mobile)) {
-      throw new BadRequestException('Mobile number must be a 11-digit number');
+    if (!/^\d{10}$/.test(mobile)) {
+      throw new BadRequestException('Mobile number must be a 10-digit number');
     }
     return value;
   }
